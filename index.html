@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深州市第四中学官网</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+        }
+
+        body {
+            font-family: 'Source Han Sans CN', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: bold;
+        }
+
+        .jumbotron {
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                            url('四中校园全景.jpg');
+            background-size: cover;
+            color: white;
+            padding: 150px 20px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .course-card {
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+        }
+
+        /* 新增响应式断点 */
+        @media (max-width: 768px) {
+            .jumbotron {
+                padding: 80px 10px;
+            }
+            
+            .navbar-brand {
+                font-size: 1.8rem;
+            }
+            
+            .card-title {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* 新增动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* 新增图标样式 */
+        .social-icons a {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+        }
+
+        /* 轮播图样式 */
+        .carousel-caption {
+            background: rgba(0,0,0,0.7);
+            padding: 20px;
+            border-radius: 8px;
+        }
+    </style>
+    
+    <!-- SEO优化 -->
+    <meta name="description" content="深州市第四中学是一所具有深厚文化底蕴的现代化初级中学，提供优质基础教育和特色课程体系">
+    <meta name="keywords" content="深州四中, 深州第四中学, 初中教育, 特色课程, 非遗传承, 科技创新">
+    <meta property="og:title" content="深州市第四中学官网">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.sz四中.edu.cn">
+    <meta property="og:image" content="四中校徽.png">
+    <meta property="og:description" content="承百年文脉，育时代新人">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">深州四中</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">学校概况</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#news">新闻动态</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#culture">校园文化</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">课程体系</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#admission">招生信息</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主视觉区域 -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">承百年文脉 育时代新人</h1>
+        <p class="lead">深州市第四中学欢迎您！</p>
+        <a href="#about" class="btn btn-primary btn-lg mt-4">了解我们</a>
+    </div>
+
+    <!-- 特色模块 -->
+    <div class="container">
+        <div class="row g-4">
+            <!-- 新闻动态 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">校园新闻</h3>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5>四中韵律操大赛圆满落幕</h5>
+                                        <small class="text-muted">2025-07-15</small>
+                                    </div>
+                                    <span class="badge bg-secondary">阅读量：1200+</span>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <div class="d-flex justify-content-between">
+                                    <div>
+                                        <h5>2025届中考倒计时启动仪式</h5>
+                                        <small class="text-muted">2025-07-01</small>
+                                    </div>
+                                    <span class="badge bg-secondary">阅读量：800+</span>
+                                </div>
+                            </a>
+                        </div>
+                        <a href="#news" class="btn btn-secondary mt-3">查看更多</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 课程体系 -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">特色课程</h3>
+                        <div class="row g-3">
+                            <div class="col-4">
+                                <div class="course-card animated">
+                                    <img src="非遗鱼灯课程.jpg" class="img-fluid rounded" alt="非遗课程">
+                                    <h6>非遗传承</h6>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="course-card animated">
+                                    <img src="科技创新课程.jpg" class="img-fluid rounded" alt="科技课程">
+                                    <h6>科技创新</h6>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="course-card animated">
+                                    <img src="艺术教育课程.jpg" class="img-fluid rounded" alt="艺术课程">
+                                    <h6>艺术教育</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#courses" class="btn btn-secondary mt-3">课程详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 新增轮播图组件 -->
+        <div class="container mt-5">
+            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="教学成果.jpg" class="d-block w-100" alt="教学成果展示">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>2025届中考重点高中上线率68%</h5>
+                            <p>再创历史新高！</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="非遗活动.jpg" class="d-block w-100" alt="非遗传承活动">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>非遗鱼灯制作课程获省级奖项</h5>
+                            <p>传承文化，创新未来</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="校园风光.jpg" class="d-block w-100" alt="校园全景">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>现代化教学设施全面升级</h5>
+                            <p>为学生提供优质学习环境</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visu
