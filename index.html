@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>深州市第四中学官网</title>
+    <title>全国知行学社</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
+            --primary-color: #8b0000;  /* 主色调 - 深蓝 */
+            --secondary-color: #ffd700; /* 辅助蓝 */
+            --text-color: #333;
         }
 
         body {
@@ -22,14 +23,25 @@
         }
 
         .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .navbar-brand img {
+            max-height: 40px;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+        }
+
+        .navbar-brand span {
             color: white;
-            font-size: 2.2rem;
+            font-size: 1.8rem;
             font-weight: bold;
         }
 
         .jumbotron {
-            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                            url('四中校园全景.jpg');
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('national_bg.jpg');
             background-size: cover;
             color: white;
             padding: 150px 20px;
@@ -39,6 +51,11 @@
         .card {
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
         }
 
         .card-title {
@@ -53,77 +70,42 @@
             margin-top: 50px;
         }
 
-        .course-card {
-            transition: transform 0.3s ease;
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px);
-        }
-
-        /* 新增响应式断点 */
-        @media (max-width: 768px) {
-            .jumbotron {
-                padding: 80px 10px;
-            }
-            
-            .navbar-brand {
-                font-size: 1.8rem;
-            }
-            
-            .card-title {
-                font-size: 1.2rem;
-            }
-        }
-
-        /* 新增动画效果 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animated {
-            animation: fadeInUp 1s ease-out;
-        }
-
-        /* 新增图标样式 */
         .social-icons a {
-            margin-right: 15px;
-            transition: transform 0.3s ease;
+            color: white;
+            margin: 0 15px;
+            font-size: 24px;
+            transition: color 0.3s ease;
         }
 
         .social-icons a:hover {
-            transform: translateY(-5px);
+            color: #ffd700;
         }
 
-        /* 轮播图样式 */
-        .carousel-caption {
-            background: rgba(0,0,0,0.7);
-            padding: 20px;
-            border-radius: 8px;
+        .btn-primary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        /* 新增分会地图样式 */
+        #chapterMap {
+            height: 400px;
+            margin: 30px 0;
         }
     </style>
-    
-    <!-- SEO优化 -->
-    <meta name="description" content="深州市第四中学是一所具有深厚文化底蕴的现代化初级中学，提供优质基础教育和特色课程体系">
-    <meta name="keywords" content="深州四中, 深州第四中学, 初中教育, 特色课程, 非遗传承, 科技创新">
-    <meta property="og:title" content="深州市第四中学官网">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="http://www.sz四中.edu.cn">
-    <meta property="og:image" content="四中校徽.png">
-    <meta property="og:description" content="承百年文脉，育时代新人">
 </head>
 <body>
     <!-- 导航栏 -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">深州四中</a>
+            <a class="navbar-brand" href="#">
+                <img src="national_logo.png" alt="全国知行学社LOGO" class="img-fluid">
+                <span>全国知行学社</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -133,19 +115,16 @@
                         <a class="nav-link active" href="#">首页</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">学校概况</a>
+                        <a class="nav-link" href="#about">学社概况</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#news">新闻动态</a>
+                        <a class="nav-link" href="#projects">重点项目</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#culture">校园文化</a>
+                        <a class="nav-link" href="#chapters">地方分会</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#courses">课程体系</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#admission">招生信息</a>
+                        <a class="nav-link" href="#join">加入我们</a>
                     </li>
                 </ul>
             </div>
@@ -154,110 +133,166 @@
 
     <!-- 主视觉区域 -->
     <div class="jumbotron text-center">
-        <h1 class="display-4">承百年文脉 育时代新人</h1>
-        <p class="lead">深州市第四中学欢迎您！</p>
-        <a href="#about" class="btn btn-primary btn-lg mt-4">了解我们</a>
+        <h1 class="display-4">知行合一 智汇全国</h1>
+        <p class="lead">推动学术创新，服务国家发展的非营利性学术组织</p>
+        <a href="#join" class="btn btn-primary btn-lg mt-4">立即加入</a>
     </div>
 
     <!-- 特色模块 -->
     <div class="container">
         <div class="row g-4">
-            <!-- 新闻动态 -->
+            <!-- 重点项目 -->
             <div class="col-md-6">
                 <div class="card">
+                    <img src="project1.jpg" class="card-img-top" alt="乡村振兴">
                     <div class="card-body">
-                        <h3 class="card-title">校园新闻</h3>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h5>四中韵律操大赛圆满落幕</h5>
-                                        <small class="text-muted">2025-07-15</small>
-                                    </div>
-                                    <span class="badge bg-secondary">阅读量：1200+</span>
-                                </div>
-                            </a>
-                            <a href="#" class="list-group-item list-group-item-action">
-                                <div class="d-flex justify-content-between">
-                                    <div>
-                                        <h5>2025届中考倒计时启动仪式</h5>
-                                        <small class="text-muted">2025-07-01</small>
-                                    </div>
-                                    <span class="badge bg-secondary">阅读量：800+</span>
-                                </div>
-                            </a>
-                        </div>
-                        <a href="#news" class="btn btn-secondary mt-3">查看更多</a>
+                        <h5 class="card-title">乡村振兴战略研究</h5>
+                        <p class="card-text">覆盖全国31个省市的乡村发展调研与政策建议</p>
+                        <a href="#projects" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
             </div>
 
-            <!-- 课程体系 -->
+            <!-- 地方分会 -->
             <div class="col-md-6">
                 <div class="card">
+                    <img src="chapters.jpg" class="card-img-top" alt="地方分会">
                     <div class="card-body">
-                        <h3 class="card-title">特色课程</h3>
-                        <div class="row g-3">
-                            <div class="col-4">
-                                <div class="course-card animated">
-                                    <img src="非遗鱼灯课程.jpg" class="img-fluid rounded" alt="非遗课程">
-                                    <h6>非遗传承</h6>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="course-card animated">
-                                    <img src="科技创新课程.jpg" class="img-fluid rounded" alt="科技课程">
-                                    <h6>科技创新</h6>
-                                </div>
-                            </div>
-                            <div class="col-4">
-                                <div class="course-card animated">
-                                    <img src="艺术教育课程.jpg" class="img-fluid rounded" alt="艺术课程">
-                                    <h6>艺术教育</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#courses" class="btn btn-secondary mt-3">课程详情</a>
+                        <h5 class="card-title">地方分会网络</h5>
+                        <p class="card-text">已建立28个省级分会，实现全国主要区域覆盖</p>
+                        <a href="#chapters" class="btn btn-primary">查看分布</a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 新增轮播图组件 -->
-        <div class="container mt-5">
-            <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
-                    <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        <!-- 学术活动 -->
+        <div class="row g-4 mt-5">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">全国学术活动</h2>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5>第十九届全国学术年会</h5>
+                                <small class="text-muted">2024-11-05 上海</small>
+                            </div>
+                            <span class="badge bg-primary">进行中</span>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h5>西部大开发政策研讨会</h5>
+                                <small class="text-muted">2024-10-20 成都</small>
+                            </div>
+                            <span class="badge bg-secondary">报名中</span>
+                        </div>
+                    </a>
                 </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="教学成果.jpg" class="d-block w-100" alt="教学成果展示">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>2025届中考重点高中上线率68%</h5>
-                            <p>再创历史新高！</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="非遗活动.jpg" class="d-block w-100" alt="非遗传承活动">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>非遗鱼灯制作课程获省级奖项</h5>
-                            <p>传承文化，创新未来</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="校园风光.jpg" class="d-block w-100" alt="校园全景">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>现代化教学设施全面升级</h5>
-                            <p>为学生提供优质学习环境</p>
+                <a href="#events" class="btn btn-secondary mt-3">查看全部活动</a>
+            </div>
+        </div>
+
+        <!-- 分会地图 -->
+        <div class="row g-4 mt-5">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">分会分布地图</h2>
+                <div id="chapterMap"></div>
+            </div>
+        </div>
+
+        <!-- 最新成果 -->
+        <div class="row g-4 mt-5">
+            <div class="col-md-12">
+                <h2 class="text-center mb-4">最新研究成果</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="report1.jpg" class="card-img-top" alt="数字经济报告">
+                            <div class="card-body">
+                                <h5 class="card-title">中国数字经济发展指数</h5>
+                                <p class="card-text">2024年全国数字经济发展水平评估报告</p>
+                                <a href="#publications" class="btn btn-primary">下载报告</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visu
+                <div class="text-center mt-3">
+                    <a href="#publications" class="btn btn-secondary">查看更多成果</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>联系方式</h5>
+                    <p>总部地址：北京市XX路XX号</p>
+                    <p>电话：010-12345678</p>
+                    <p>邮箱：national@zhixing.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>快速链接</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#about">组织章程</a></li>
+                        <li><a href="#projects">研究领域</a></li>
+                        <li><a href="#join">申请流程</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>关注我们</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">© 2024 全国知行学社 版权所有</p>
+        </div>
+    </footer>
+
+    <!-- 脚本 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_AK"></script>
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 动态时间戳
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // 分会地图初始化
+        function initMap() {
+            const map = new BMap.Map("chapterMap");
+            const points = [
+                {name: '北京', point: new BMap.Point(116.404, 39.915)},
+                {name: '上海', point: new BMap.Point(121.4737, 31.2304)},
+                {name: '广州', point: new BMap.Point(113.2644, 23.1291)}
+            ];
+
+            points.forEach(point => {
+                const marker = new BMap.Marker(point.point);
+                const infoWindow = new BMap.InfoWindow(point.name);
+                marker.addEventListener('click', () => infoWindow.open(map, point.point));
+                map.addOverlay(marker);
+            });
+
+            map.centerAndZoom(new BMap.Point(116.404, 39.915), 5);
+        }
+        initMap();
+    </script>
+</body>
+</html>
